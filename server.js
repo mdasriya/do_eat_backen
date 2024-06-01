@@ -19,6 +19,7 @@ const { medecienRouter } = require("./routes/medecien.router");
 const { MailRouter } = require("./routes/Mail.router");
 const { MenuRouter } = require("./routes/menu.router");
 const { ResturantRouter } = require("./routes/resturant.router");
+const { DeviceRouter } = require("./routes/device.router");
 
 require("dotenv").config()
 
@@ -49,7 +50,7 @@ app.use("/medecine", medecienRouter)
 app.use("/send", MailRouter)
 app.use("/menu", MenuRouter)
 app.use("/resturant", ResturantRouter)
-
+app.use('/api',DeviceRouter);
 // server home page
 app.get("/", (req,res)=> {
   res.send("Welcome to do eat server")
