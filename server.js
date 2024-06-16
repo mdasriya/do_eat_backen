@@ -64,8 +64,6 @@ app.post("/checkout", async (req, res) => {
   }
 
 
-
-  // Collect line items as per Stripe's expectations
   const lineItems = items
     .filter((item) => item.quantity > 0) 
     .map((item) => ({
